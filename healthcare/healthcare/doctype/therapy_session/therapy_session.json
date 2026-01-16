@@ -18,6 +18,8 @@
   "therapy_type",
   "practitioner",
   "department",
+  "sales_invoice",
+  "status",
   "details_section",
   "duration",
   "rate",
@@ -54,11 +56,13 @@
    "set_only_once": 1
   },
   {
+   "fetch_from": "therapy_plan.patient",
    "fieldname": "patient",
    "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Patient",
    "options": "Patient",
+   "read_only": 1,
    "reqd": 1
   },
   {
@@ -111,9 +115,11 @@
    "fetch_from": "therapy_template.rate",
    "fieldname": "rate",
    "fieldtype": "Currency",
-   "label": "Rate"
+   "label": "Rate",
+   "read_only": 1
   },
   {
+   "depends_on": "eval doc.status = \"Paid\";",
    "fieldname": "exercises_section",
    "fieldtype": "Section Break",
    "label": "Exercises"
@@ -203,6 +209,7 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval doc.status = \"Paid\";",
    "fieldname": "section_break_23",
    "fieldtype": "Section Break"
   },
@@ -219,6 +226,7 @@
   },
   {
    "collapsible": 1,
+   "depends_on": "eval doc.status = \"Paid\";",
    "fieldname": "medical_coding_section",
    "fieldtype": "Section Break",
    "label": "Medical Coding"
@@ -242,9 +250,26 @@
   },
   {
    "collapsible": 1,
+   "depends_on": "eval doc.status = \"Paid\";",
    "fieldname": "more_information_section",
    "fieldtype": "Section Break",
    "label": "More Information"
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Not Invoiced\nPending Payment\nPaid\nCompleted",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
@@ -260,7 +285,7 @@
    "link_fieldname": "reference_name"
   }
  ],
- "modified": "2025-12-25 09:36:43.046662",
+ "modified": "2026-01-16 17:01:30.217271",
  "modified_by": "Administrator",
  "module": "Healthcare",
  "name": "Therapy Session",
@@ -298,7 +323,24 @@
  "search_fields": "patient,appointment,therapy_plan,therapy_type",
  "sort_field": "creation",
  "sort_order": "DESC",
- "states": [],
+ "states": [
+  {
+   "color": "Gray",
+   "title": "Not Invoiced"
+  },
+  {
+   "color": "Orange",
+   "title": "Pending Payment"
+  },
+  {
+   "color": "Green",
+   "title": "Paid"
+  },
+  {
+   "color": "Green",
+   "title": "Completed"
+  }
+ ],
  "title_field": "patient",
  "track_changes": 1
 }

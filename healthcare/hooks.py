@@ -137,6 +137,9 @@ doc_events = {
 		"on_cancel": "healthcare.healthcare.custom_doctype.payment_entry.manage_payment_entry_submit_cancel",
 		"validate": "healthcare.healthcare.doctype.insurance_claim.insurance_claim.validate_payment_entry_and_set_claim_fields",
 	},
+    "Payment Entry": {
+        "on_submit": "healthcare.healthcare.doctype.therapy_session.therapy_session.on_payment_entry_submit"
+    }
 }
 
 scheduler_events = {
