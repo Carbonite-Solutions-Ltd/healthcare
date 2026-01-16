@@ -43,6 +43,9 @@ frappe.ui.form.on("Therapy Session", {
 	},
 
 	refresh: function (frm) {
+		// Set status indicator
+		set_status_indicator(frm);
+		
 		if (frm.doc.therapy_plan) {
 			frm.trigger("filter_therapy_types");
 		}
@@ -71,6 +74,49 @@ frappe.ui.form.on("Therapy Session", {
 			);
 		}
 
+		// Show Invoice Therapy Session button if not invoiced
+		if (!frm.doc.__islocal && frm.doc.docstatus === 0 && frm.doc.status === "Not Invoiced") {
+			frm.add_custom_button(
+				__("Invoice Therapy Session"),
+				function () {
+					create_invoice_for_therapy_session(frm);
+				}
+			).css({'background-color': '#28a745', 'color': 'white', 'font-weight': 'bold'});
+		}
+
+		// Show View Invoice button if invoice exists
+		if (frm.doc.sales_invoice) {
+			frm.add_custom_button(
+				__("Sales Invoice"),
+				function () {
+					frappe.set_route('Form', 'Sales Invoice', frm.doc.sales_invoice);
+				},
+				__('View')
+			);
+		}
+
+		// Only show submit button if status is Paid
+		if (frm.doc.docstatus === 0 && frm.doc.status !== "Paid") {
+			frm.page.clear_primary_action();
+		}
+
+		// Show status message
+		if (frm.doc.status === "Pending Payment") {
+			frm.dashboard.add_comment(
+				__("Payment is pending. Session cannot be submitted until payment is received."),
+				"orange",
+				true
+			);
+		}
+
+		if (frm.doc.status === "Paid") {
+			frm.dashboard.add_comment(
+				__("Payment received. You can now submit this therapy session."),
+				"green",
+				true
+			);
+		}
+
 		if (frm.doc.docstatus === 1) {
 			frm.add_custom_button(
 				__("Patient Assessment"),
@@ -83,14 +129,15 @@ frappe.ui.form.on("Therapy Session", {
 				"Create",
 			);
 
+			// Legacy invoice button (kept for backward compatibility)
 			frappe.db.get_value(
 				"Therapy Plan",
 				{ name: frm.doc.therapy_plan },
 				"therapy_plan_template",
 				r => {
-					if (r && !r.therapy_plan_template) {
+					if (r && !r.therapy_plan_template && !frm.doc.sales_invoice) {
 						frm.add_custom_button(
-							__("Sales Invoice"),
+							__("Sales Invoice (Legacy)"),
 							function () {
 								frappe.model.open_mapped_doc({
 									method: "healthcare.healthcare.doctype.therapy_session.therapy_session.invoice_therapy_session",
@@ -231,6 +278,74 @@ frappe.ui.form.on("Therapy Session", {
 		}
 	},
 });
+
+function set_status_indicator(frm) {
+	// Set status indicator color based on status
+	if (frm.doc.status) {
+		let indicator_color = "grey";
+		let indicator_label = frm.doc.status;
+		
+		switch(frm.doc.status) {
+			case "Not Invoiced":
+				indicator_color = "grey";
+				break;
+			case "Pending Payment":
+				indicator_color = "orange";
+				break;
+			case "Paid":
+				indicator_color = "green";
+				break;
+			case "Completed":
+				indicator_color = "blue";
+				break;
+		}
+		
+		frm.page.set_indicator(indicator_label, indicator_color);
+	}
+}
+
+function create_invoice_for_therapy_session(frm) {
+	// Validate required fields
+	if (!frm.doc.therapy_type) {
+		frappe.msgprint(__('Please select Therapy Type'));
+		return;
+	}
+	
+	if (!frm.doc.rate || frm.doc.rate === 0) {
+		frappe.msgprint(__('Please set a rate for this therapy session'));
+		return;
+	}
+	
+	frappe.confirm(
+		__('This will create a Sales Invoice for this Therapy Session. Continue?'),
+		function() {
+			frappe.call({
+				method: 'healthcare.healthcare.doctype.therapy_session.therapy_session.create_sales_invoice_for_therapy_session',
+				args: {
+					therapy_session_name: frm.doc.name
+				},
+				freeze: true,
+				freeze_message: __('Creating Sales Invoice...'),
+				callback: function(r) {
+					if (r.message && r.message.status === 'Success') {
+						frappe.show_alert({
+							message: __('Sales Invoice created successfully! Awaiting payment.'),
+							indicator: 'green'
+						}, 5);
+						frm.reload_doc();
+					}
+				},
+				error: function(r) {
+					frappe.msgprint({
+						title: __('Error'),
+						message: r.message || __('Failed to create Sales Invoice'),
+						indicator: 'red'
+					});
+				}
+			});
+		}
+	);
+}
 
 let calculate_age = function (birth) {
 	let ageMS = Date.parse(Date()) - Date.parse(birth);
