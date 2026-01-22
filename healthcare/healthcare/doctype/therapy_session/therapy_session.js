@@ -75,7 +75,7 @@ frappe.ui.form.on("Therapy Session", {
 		}
 
 		// Show Invoice Therapy Session button if not invoiced
-		if (!frm.doc.__islocal && frm.doc.docstatus === 0 && frm.doc.status === "Not Invoiced") {
+		if (!frm.doc.__islocal && frm.doc.docstatus === 0 && frm.doc.status === "Not Invoiced" && frm.doc.from_patient_encounter == 0) {
 			frm.add_custom_button(
 				__("Invoice Therapy Session"),
 				function () {
