@@ -33,9 +33,10 @@
   },
   {
    "fieldname": "dosage",
-   "fieldtype": "Float",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "label": "Dosage",
+   "options": "Prescription Dosage",
    "reqd": 1
   },
   {
@@ -81,7 +82,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-25 09:36:29.228721",
+ "modified": "2026-01-23 19:00:34.648429",
  "modified_by": "Administrator",
  "module": "Healthcare",
  "name": "Inpatient Medication Order Entry",
