@@ -20,6 +20,7 @@
   "department",
   "sales_invoice",
   "status",
+  "from_patient_encounter",
   "details_section",
   "duration",
   "rate",
@@ -270,6 +271,15 @@
    "label": "Status",
    "options": "Not Invoiced\nPending Payment\nPaid\nCompleted",
    "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "from_patient_encounter",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "From Patient Encounter",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
@@ -285,7 +295,7 @@
    "link_fieldname": "reference_name"
   }
  ],
- "modified": "2026-01-16 17:01:30.217271",
+ "modified": "2026-01-21 19:30:10.626686",
  "modified_by": "Administrator",
  "module": "Healthcare",
  "name": "Therapy Session",
