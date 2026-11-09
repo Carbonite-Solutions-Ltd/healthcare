@@ -237,8 +237,8 @@ class InsuranceClaim(Document):
 				pic.docstatus=1 AND
 				pic.company=%(company)s AND
 				pic.insurance_payor=%(insurance_payor)s AND
-				pic.patient=%(patient)s AND
-				pic.insurance_policy=%(insurance_policy)s AND
+				(%(patient)s = '' OR pic.patient=%(patient)s) AND
+				(%(insurance_policy)s = '' OR pic.insurance_policy=%(insurance_policy)s) AND
 				({filter_date_based_on} BETWEEN %(from_date)s AND %(to_date)s) AND
 				pic.status IN %(statuses)s AND
 				pic.paid_amount < pic.coverage_amount_invoiced
@@ -249,8 +249,9 @@ class InsuranceClaim(Document):
 				else "pic.posting_date"
 			),
 			{
-				"patient": self.patient,
-				"insurance_policy": self.insurance_policy,
+				# empty: the insurer's monthly claim, every patient
+				"patient": self.patient or "",
+				"insurance_policy": self.insurance_policy or "",
 				"company": self.company,
 				"insurance_payor": self.insurance_payor,
 				"from_date": self.from_date,

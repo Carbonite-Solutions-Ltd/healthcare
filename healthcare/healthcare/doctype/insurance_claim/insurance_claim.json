@@ -232,14 +232,16 @@
    "fieldtype": "Link",
    "label": "Patient",
    "options": "Patient",
-   "reqd": 1
+   "reqd": 0,
+   "description": "Leave empty for the insurer's monthly claim (every patient)."
   },
   {
    "fieldname": "insurance_policy",
    "fieldtype": "Link",
    "label": "Insurance Policy",
    "options": "Patient Insurance Policy",
-   "reqd": 1
+   "reqd": 0,
+   "description": "Only with a patient."
   },
   {
    "fetch_from": "insurance_policy.insurance_plan",
@@ -293,7 +295,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-25 09:39:02.134891",
+ "modified": "2026-11-10 11:00:00.000000",
  "modified_by": "Administrator",
  "module": "Healthcare",
  "name": "Insurance Claim",
