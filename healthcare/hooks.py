@@ -13,7 +13,7 @@ add_to_apps_screen = [
 	{
 		"name": app_name,
 		"logo": "/assets/healthcare/images/healthcare.svg",
-		"title": app_title,
+		"title": "Healthcare",  # the desk app holding Healthcare and its companions (ex_healthcare)
 		"route": app_home,
 		"has_permission": "erpnext.check_app_permission",
 	}

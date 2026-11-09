@@ -1,0 +1,79 @@
+{
+ "app": "healthcare",
+ "creation": "2026-11-09 20:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Dock",
+ "idx": 0,
+ "items": [
+  {
+   "link_type": "Sidebar",
+   "link_to": "Healthcare",
+   "title": "Healthcare",
+   "icon": "hospital",
+   "added": 0,
+   "hidden": 0,
+   "idx": 1
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Outpatient",
+   "title": "Outpatient",
+   "icon": "stethoscope",
+   "added": 0,
+   "hidden": 0,
+   "idx": 2
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Inpatient",
+   "title": "Inpatient",
+   "icon": "bed-double",
+   "added": 0,
+   "hidden": 0,
+   "idx": 3
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Diagnostics",
+   "title": "Diagnostics",
+   "icon": "flask-conical",
+   "added": 0,
+   "hidden": 0,
+   "idx": 4
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Rehabilitation",
+   "title": "Rehabilitation",
+   "icon": "hand-heart",
+   "added": 0,
+   "hidden": 0,
+   "idx": 5
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Insurance",
+   "title": "Insurance",
+   "icon": "heart-handshake",
+   "added": 0,
+   "hidden": 0,
+   "idx": 6
+  },
+  {
+   "link_type": "Sidebar",
+   "link_to": "Healthcare Setup",
+   "title": "Setup",
+   "icon": "sliders-horizontal",
+   "added": 0,
+   "hidden": 1,
+   "idx": 7
+  }
+ ],
+ "modified": "2026-11-09 20:00:00.000000",
+ "modified_by": "Administrator",
+ "mount_on": null,
+ "name": "healthcare",
+ "owner": "Administrator",
+ "standard": 1,
+ "user": null
+}
