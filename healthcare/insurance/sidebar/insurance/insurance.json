@@ -24,6 +24,40 @@
    "idx": 1
   },
   {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "Insurance Payor",
+   "link_type": "DocType",
+   "link_to": "Insurance Payor",
+   "child": 0,
+   "icon": "building-2",
+   "idx": 2
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "Patient Insurance Policy",
+   "link_type": "DocType",
+   "link_to": "Patient Insurance Policy",
+   "child": 0,
+   "icon": "id-card",
+   "idx": 3
+  },
+  {
    "type": "Link",
    "label": "Insurance Claim",
    "link_type": "DocType",
@@ -38,7 +72,7 @@
    "hidden": 0,
    "is_default_module": 0,
    "open_in_new_tab": 0,
-   "idx": 2
+   "idx": 4
   },
   {
    "type": "Link",
@@ -55,7 +89,7 @@
    "hidden": 0,
    "is_default_module": 0,
    "open_in_new_tab": 0,
-   "idx": 3
+   "idx": 5
   },
   {
    "type": "Link",
@@ -72,7 +106,7 @@
    "hidden": 0,
    "is_default_module": 0,
    "open_in_new_tab": 0,
-   "idx": 4
+   "idx": 6
   },
   {
    "type": "Link",
@@ -89,10 +123,106 @@
    "hidden": 0,
    "is_default_module": 0,
    "open_in_new_tab": 0,
-   "idx": 5
+   "idx": 7
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 1,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Section Break",
+   "label": "NHIS",
+   "link_type": "DocType",
+   "child": 0,
+   "icon": "badge-check",
+   "idx": 8
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "NHIS Claim",
+   "link_type": "DocType",
+   "link_to": "NHIS Claim",
+   "child": 1,
+   "idx": 9
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "NHIS Claim Batch",
+   "link_type": "DocType",
+   "link_to": "NHIS Claim Batch",
+   "child": 1,
+   "idx": 10
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "NHIS Remittance",
+   "link_type": "DocType",
+   "link_to": "NHIS Remittance",
+   "child": 1,
+   "idx": 11
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "NHIS Batches Awaiting Payment",
+   "link_type": "Report",
+   "link_to": "NHIS Batches Awaiting Payment",
+   "child": 1,
+   "idx": 12
+  },
+  {
+   "added": 0,
+   "collapsible": 1,
+   "hidden": 0,
+   "indent": 0,
+   "is_default_module": 0,
+   "keep_closed": 0,
+   "open_in_new_tab": 0,
+   "show_arrow": 0,
+   "type": "Link",
+   "label": "NHIS Settings",
+   "link_type": "DocType",
+   "link_to": "NHIS Settings",
+   "child": 1,
+   "idx": 13
   }
  ],
- "modified": "2026-11-09 21:00:00.000000",
+ "modified": "2026-11-10 09:00:00.000000",
  "modified_by": "Administrator",
  "module": "Insurance",
  "name": "Insurance",

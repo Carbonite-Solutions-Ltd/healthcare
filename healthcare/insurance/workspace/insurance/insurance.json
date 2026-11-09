@@ -6,7 +6,7 @@
    "label": "Insurance Claim Status"
   }
  ],
- "content": "[{\"id\":\"xD5yV5M01A\",\"type\":\"chart\",\"data\":{\"chart_name\":\"Insurance Claim Status\",\"col\":12}},{\"id\":\"QPKJARhNlP\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"7R5geM0eiC\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Outstanding Claims\",\"col\":3}},{\"id\":\"7tV1Skv4y5\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Outstanding Claims Value\",\"col\":3}},{\"id\":\"wJURP86-v3\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Paid Claims\",\"col\":3}},{\"id\":\"-b4MdATviZ\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"Paid Claims Value\",\"col\":3}},{\"id\":\"4cQDF7WK7s\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Your Shortcuts</span>\",\"col\":12}},{\"id\":\"X5YMfgIhuK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Insurance Claim\",\"col\":3}},{\"id\":\"U6WaTxAcSl\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Coverage\",\"col\":3}},{\"id\":\"rTiJyM7gp6\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Eligibility Plan\",\"col\":3}},{\"id\":\"ZlXP-idVZh\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Sales Invoice\",\"col\":3}},{\"id\":\"Q5Rn2qsmAk\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"PnwFws27dZ\",\"type\":\"card\",\"data\":{\"card_name\":\"Insurance\",\"col\":4}},{\"id\":\"TKIu6RFgSI\",\"type\":\"card\",\"data\":{\"card_name\":\"Eligibility\",\"col\":4}},{\"id\":\"4LdIDU-094\",\"type\":\"card\",\"data\":{\"card_name\":\"Masters\",\"col\":4}}]",
+ "content": "[{\"id\": \"xD5yV5M01A\", \"type\": \"chart\", \"data\": {\"chart_name\": \"Insurance Claim Status\", \"col\": 12}}, {\"id\": \"QPKJARhNlP\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"7R5geM0eiC\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Outstanding Claims\", \"col\": 3}}, {\"id\": \"7tV1Skv4y5\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Outstanding Claims Value\", \"col\": 3}}, {\"id\": \"wJURP86-v3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Paid Claims\", \"col\": 3}}, {\"id\": \"-b4MdATviZ\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Paid Claims Value\", \"col\": 3}}, {\"id\": \"4cQDF7WK7s\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">Your Shortcuts</span>\", \"col\": 12}}, {\"id\": \"X5YMfgIhuK\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Insurance Claim\", \"col\": 3}}, {\"id\": \"U6WaTxAcSl\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Patient Insurance Coverage\", \"col\": 3}}, {\"id\": \"rTiJyM7gp6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Insurance Payor Eligibility Plan\", \"col\": 3}}, {\"id\": \"ZlXP-idVZh\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Sales Invoice\", \"col\": 3}}, {\"id\": \"nhis_hdr\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\">NHIS</span>\", \"col\": 12}}, {\"id\": \"nhis_sc0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NHIS Claim\", \"col\": 3}}, {\"id\": \"nhis_sc1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NHIS Claim Batch\", \"col\": 3}}, {\"id\": \"nhis_sc2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NHIS Remittance\", \"col\": 3}}, {\"id\": \"nhis_sc3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NHIS Batches Awaiting Payment\", \"col\": 3}}, {\"id\": \"nhis_sc4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"NHIS Settings\", \"col\": 3}}, {\"id\": \"Q5Rn2qsmAk\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"PnwFws27dZ\", \"type\": \"card\", \"data\": {\"card_name\": \"Insurance\", \"col\": 4}}, {\"id\": \"TKIu6RFgSI\", \"type\": \"card\", \"data\": {\"card_name\": \"Eligibility\", \"col\": 4}}, {\"id\": \"4LdIDU-094\", \"type\": \"card\", \"data\": {\"card_name\": \"Masters\", \"col\": 4}}, {\"id\": \"nhis_card\", \"type\": \"card\", \"data\": {\"card_name\": \"NHIS\", \"col\": 4}}]",
  "creation": "2025-05-30 17:40:59.886349",
  "custom_blocks": [],
  "docstatus": 0,
@@ -61,7 +61,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Insurance Coverage",
+   "label": "Patient Insurance Coverage",
    "link_count": 0,
    "link_to": "Patient Insurance Coverage",
    "link_type": "DocType",
@@ -91,7 +91,7 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Payor Contract",
+   "label": "Insurance Payor Contract",
    "link_count": 0,
    "link_to": "Insurance Payor Contract",
    "link_type": "DocType",
@@ -126,9 +126,68 @@
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "NHIS",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "NHIS Claim",
+   "link_count": 0,
+   "link_to": "NHIS Claim",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "NHIS Claim Batch",
+   "link_count": 0,
+   "link_to": "NHIS Claim Batch",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "NHIS Remittance",
+   "link_count": 0,
+   "link_to": "NHIS Remittance",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 1,
+   "label": "NHIS Batches Awaiting Payment",
+   "link_count": 0,
+   "link_to": "NHIS Batches Awaiting Payment",
+   "link_type": "Report",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "NHIS Settings",
+   "link_count": 0,
+   "link_to": "NHIS Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
   }
  ],
- "modified": "2026-11-09 21:00:00.000000",
+ "modified": "2026-11-10 09:00:00.000000",
  "modified_by": "Administrator",
  "module": "Insurance",
  "name": "Insurance",
@@ -160,7 +219,7 @@
    "color": "Grey",
    "doc_view": "List",
    "format": "{}",
-   "label": "Eligibility Plan",
+   "label": "Insurance Payor Eligibility Plan",
    "link_to": "Insurance Payor Eligibility Plan",
    "stats_filter": "[[\"Insurance Payor Eligibility Plan\",\"is_active\",\"=\",1]]",
    "type": "DocType"
@@ -178,7 +237,7 @@
    "color": "Cyan",
    "doc_view": "List",
    "format": "{}",
-   "label": "Coverage",
+   "label": "Patient Insurance Coverage",
    "link_to": "Patient Insurance Coverage",
    "stats_filter": "[[\"Patient Insurance Coverage\",\"docstatus\",\"=\",\"1\"],[\"Patient Insurance Coverage\",\"status\",\"in\",[\"Draft\",\"Approved\",\"Partly Invoiced\",null]]]",
    "type": "DocType"
@@ -190,6 +249,46 @@
    "label": "Sales Invoice",
    "link_to": "Sales Invoice",
    "stats_filter": "[[\"Sales Invoice\",\"docstatus\",\"=\",\"1\"],[\"Sales Invoice\",\"total_insurance_coverage_amount\",\"is\",\"set\"]]",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "NHIS Claim",
+   "link_to": "NHIS Claim",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "NHIS Claim Batch",
+   "link_to": "NHIS Claim Batch",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "NHIS Remittance",
+   "link_to": "NHIS Remittance",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "",
+   "format": "{}",
+   "label": "NHIS Batches Awaiting Payment",
+   "link_to": "NHIS Batches Awaiting Payment",
+   "type": "Report"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "format": "{}",
+   "label": "NHIS Settings",
+   "link_to": "NHIS Settings",
    "type": "DocType"
   }
  ],
