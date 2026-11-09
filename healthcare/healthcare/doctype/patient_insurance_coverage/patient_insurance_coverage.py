@@ -347,7 +347,17 @@ def get_item_price_list_rate(item_code, price_list, qty, company):
 			"conversion_rate": 1.0,
 		}
 	)
-	item_details = get_item_details(ctx)
+	# A coverage is made on behalf of whoever saved the appointment / invoice (front desk, cashier),
+	# who may have no read permission on Item; get_item_details checks it. An item's price is not
+	# what that permission protects, so look it up as Administrator.
+	user, session = frappe.session.user, frappe.local.session
+	frappe.local.session = frappe._dict(session)
+	frappe.set_user("Administrator")
+	try:
+		item_details = get_item_details(ctx)
+	finally:
+		frappe.local.session = session
+		frappe.set_user(user)
 
 	return item_details.price_list_rate
 

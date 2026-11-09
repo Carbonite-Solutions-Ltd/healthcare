@@ -151,8 +151,11 @@ def get_insurance_eligibility(
 				& (
 					(Coalesce(Eligibility.item_code, "") == item_code)
 					| (
-						(Coalesce(Eligibility.template_dt, "") == (template_dt or ""))
-						& (Coalesce(Eligibility.template_dn, "") == (template_dn or ""))
+						# only when a template was given: blank == blank used to match every
+						# item-based eligibility of the plan, so any item got covered
+						((Eligibility.template_dt == template_dt) & (Eligibility.template_dn == template_dn))
+						if (template_dt and template_dn)
+						else (Eligibility.name.isnull())
 					)
 				)
 				& (Eligibility.valid_from <= on_date)
