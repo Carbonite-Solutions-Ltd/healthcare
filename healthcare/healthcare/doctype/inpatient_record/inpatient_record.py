@@ -790,26 +790,40 @@ def set_total(self):
 	self.total = total
 
 
+# Service Request statuses (Code Value names) that leave nothing to carry out
+SERVICE_REQUEST_DONE = ("completed-Request Status", "revoked-Request Status", "entered-in-error-Request Status")
+
+
+def get_pending_service_requests(inpatient_record):
+	"""Submitted Service Requests of the admission that are not yet completed (or revoked)."""
+	return frappe.get_all(
+		"Service Request",
+		filters={
+			"patient": inpatient_record.patient,
+			"inpatient_record": inpatient_record.name,
+			"docstatus": 1,
+			"status": ["not in", SERVICE_REQUEST_DONE],
+		},
+		pluck="name",
+	)
+
+
 def validate_incomplete_service_requests(inpatient_record):
-	if not frappe.db.get_single_value(
+	"""Refuse the discharge while orders are still open, unless Healthcare Settings → Allow
+	Discharge Despite Pending Healthcare Services is ticked."""
+	if frappe.db.get_single_value(
 		"Healthcare Settings", "allow_discharge_despite_pending_healthcare_services"
 	):
 		return
 
-	filters = {
-		"patient": inpatient_record.patient,
-		"inpatient_record": inpatient_record.name,
-		"docstatus": 1,
-		"status": ["not in", ["Completed"]],
-	}
-
-	service_requests = frappe.db.get_list("Service Request", filters=filters, pluck="name")
-	if service_requests and len(service_requests) > 0:
-		service_requests = [
+	service_requests = get_pending_service_requests(inpatient_record)
+	if service_requests:
+		service_request_list = ", ".join(
 			get_link_to_form("Service Request", service_request) for service_request in service_requests
-		]
-		service_request_list = ", ".join(str(request) for request in service_requests)
-		message = _("There are Orders yet to be carried out<b> {0}").format(frappe.bold(service_request_list))
+		)
+		message = _(
+			"Cannot discharge: these orders are not completed yet: {0}. Complete or cancel them, or tick Allow Discharge Despite Pending Healthcare Services in Healthcare Settings."
+		).format(service_request_list)
 
 		frappe.throw(message, title=_("Incomplete Services"), is_minimizable=True, wide=True)
 

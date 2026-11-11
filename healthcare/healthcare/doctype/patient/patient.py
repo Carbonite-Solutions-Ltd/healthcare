@@ -181,6 +181,11 @@ class Patient(Document):
 
 	@frappe.whitelist()
 	def invoice_patient_registration(self):
+		# Only while Healthcare itself collects the fee: with Collect Registration Fee off (the
+		# registration fee is then billed elsewhere, e.g. Ex Healthcare) a stale button or a direct
+		# call must not raise a second registration bill.
+		if not frappe.db.get_single_value("Healthcare Settings", "collect_registration_fee"):
+			frappe.throw(_("Healthcare Settings → Collect Registration Fee is off; registration isn't invoiced here."))
 		registration_fee = frappe.db.get_single_value("Healthcare Settings", "registration_fee")
 		if not registration_fee:
 			return
