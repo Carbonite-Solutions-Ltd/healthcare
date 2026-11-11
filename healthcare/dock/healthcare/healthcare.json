@@ -16,12 +16,21 @@
   },
   {
    "link_type": "Sidebar",
+   "link_to": "Front Desk",
+   "title": "Front Desk",
+   "icon": "users-round",
+   "added": 0,
+   "hidden": 0,
+   "idx": 2
+  },
+  {
+   "link_type": "Sidebar",
    "link_to": "Outpatient",
    "title": "Outpatient",
    "icon": "stethoscope",
    "added": 0,
    "hidden": 0,
-   "idx": 2
+   "idx": 3
   },
   {
    "link_type": "Sidebar",
@@ -30,7 +39,7 @@
    "icon": "bed-double",
    "added": 0,
    "hidden": 0,
-   "idx": 3
+   "idx": 4
   },
   {
    "link_type": "Sidebar",
@@ -39,7 +48,7 @@
    "icon": "flask-conical",
    "added": 0,
    "hidden": 0,
-   "idx": 4
+   "idx": 5
   },
   {
    "link_type": "Sidebar",
@@ -48,7 +57,7 @@
    "icon": "hand-heart",
    "added": 0,
    "hidden": 0,
-   "idx": 5
+   "idx": 6
   },
   {
    "link_type": "Sidebar",
@@ -57,7 +66,7 @@
    "icon": "heart-handshake",
    "added": 0,
    "hidden": 0,
-   "idx": 6
+   "idx": 7
   },
   {
    "link_type": "Sidebar",
@@ -66,10 +75,10 @@
    "icon": "sliders-horizontal",
    "added": 0,
    "hidden": 1,
-   "idx": 7
+   "idx": 8
   }
  ],
- "modified": "2026-11-09 20:00:00.000000",
+ "modified": "2026-11-11 12:00:00.000000",
  "modified_by": "Administrator",
  "mount_on": null,
  "name": "healthcare",
